@@ -1,12 +1,12 @@
 import math
 #算度数，最大度数的log
-f1=open('coraall_fac1.txt','w')
+f1=open('fac0.txt','w')
 su=1
 f={}
 fac=1
 
-for fac in range(1,71825):
-    #print(fac)
+for fac in range(1,92249):
+    print(fac)
     su=fac*su
     #f[fac]=su
     a=math.log(su)

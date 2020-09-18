@@ -46,25 +46,6 @@ for line in f2.readlines():
     s=line.split()
     fac[int(s[0])]=float(s[1])
 f.close()
-
-
-'''
-f1=open('fac.txt','w')
-su=1
-f={}
-f[0]=1
-fac=1
-su=1
-for fac in range(1,23333):
-    su=fac*su
-    f[fac]=su
-    f1.write(str(fac))
-    f1.write(" ")
-    f1.write(str(su))
-    f1.write("\n")
-f1.close()
-'''
-
 w1=open('w1.txt','w')
 w2=open('w2.txt','w')
 w3=open('w3.txt','w')
@@ -127,79 +108,7 @@ else:
 D = fac[23332]
 zl=0
 sum=0
-'''
-for j in train_data:#具体哪个node
-    class_end=""
-    class_p=1
-    print(j)
-    for key in class_cl:#每个节点对每一类的P值
-        kin = 0
-        kout = 0
-        D_s = 0
-        Ds = 0
-        asso = node_n[j]
-        for i in asso:
-            if i in valid_data:
-                kout = kout + 1
-            else:
-                if node_c[i] == key:
-                    kin = kin + 1
-                else:
-                    kout = kout + 1
-        ki = kin + kout
-        for k in valid_data:
-            D_s = int(node_num[k])+ D_s
-        for k in train_data:
-            cla = node_c[k]
-            if cla == key:
-                Ds = int(node_num[k]) + Ds
-            else:
-                D_s = int(node_num[k]) + D_s
-        ki = kin + kout
-        if Ds-ki <0:
-            print(key)
-            print(j)
-            print(Ds)
-            print(ki)
-            print(kin)
-            print(kout)
-        x = math.factorial(Ds - ki)
 
-        y = math.factorial(D_s)
-        xx = math.factorial(ki)
-        yy = math.factorial(23332 - 2 * ki)
-        x1 = math.factorial(Ds)
-        y1 = math.factorial(D_s - ki)
-        p3 = x1 * y1 * xx * yy
-        z = math.factorial(23332 - ki)
-        u1 = math.factorial(kin)
-        u2 = math.factorial(kout)
-        u3 = math.factorial(Ds - kin - ki)
-        u4 = math.factorial(D_s - kout)
-        u5 = math.factorial(Ds - kin)
-        u6 = math.factorial(D_s - ki - kout)
-        q3 = u5 * u6 * z * u1 * u2
-        p = x * y * yy * xx
-        q = u1 * u2 * u3 * u4 * z
-        pvalue = p / q
-
-        if node_c[j] == key:
-            pvalue = p / q
-        else:
-            pvalue=p3/q3
-        #print(key)
-        #print(pvalue)
-        if pvalue<class_p:
-            class_p=pvalue
-            class_end=key
-    sum=sum+1
-    if node_c[j]==class_end:
-        zl=zl+1
-        #print(j)
-        print(zl)
-        print(sum)
-print(zl/sum)
-'''
 for j in valid_data:#具体哪个node
     class_end=""
     class_p=1
@@ -227,8 +136,6 @@ for j in valid_data:#具体哪个node
                 Ds = int(node_num[k]) + Ds
             else:
                 D_s = int(node_num[k]) + D_s
-
-
         x = fac[Ds]
         y = fac[D_s - ki]
         xx =fac[ki]
@@ -258,8 +165,6 @@ for j in valid_data:#具体哪个node
     if node_c[j]==class_end:
         zl=zl+1
         #print(j)
-        #print(zl)
-        #print(sum)
-
-
+print(zl)
+print(sum)
 print(zl/sum)

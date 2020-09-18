@@ -41,7 +41,7 @@ valid_data=[]
 w1=open('w1.txt','w')
 w2=open('w2.txt','w')
 
-'''
+
 for c in class_cl:
     list_class=[]
     class_dict = {}  # 数字对应node的字典
@@ -135,8 +135,8 @@ for j in valid_data:#具体哪个node
         p = x * y * yy * xx
         q = u1 * u2 * u3 * u4 * z
         pvalue = p / q
-        print(key)
-        print(pvalue)
+        #print(key)
+        #print(pvalue)
         if pvalue<class_p:
             class_p=pvalue
             class_end=key
@@ -149,4 +149,4 @@ for j in valid_data:#具体哪个node
     else:
         print(j)
 
-print(zl/sum)'''
+print(zl/sum)
